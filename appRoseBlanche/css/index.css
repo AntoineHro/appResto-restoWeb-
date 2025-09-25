@@ -1,0 +1,152 @@
+/* Style global */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background: url('../image/background.png') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  /* HERO */
+  .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero h1 span {
+    color: #f4b400;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .btn-primary, .btn-secondary {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .btn-primary {
+    background: #f4b400;
+    color: #000;
+  }
+  
+  .btn-primary:hover {
+    background: #e89c00;
+  }
+  
+  .btn-secondary {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+  }
+  
+  .btn-secondary:hover {
+    background: #fff;
+    color: #000;
+  }
+  
+  /* SECTION LIVRAISON */
+  .delivery {
+    padding: 4rem 2rem;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+  }
+  
+  .delivery h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .delivery-cards {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  
+  .card {
+    background: #222;
+    padding: 1.5rem;
+    border-radius: 10px;
+    max-width: 280px;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+  }
+  
+  .card img {
+    width: 80px;
+    margin-bottom: 1rem;
+  }
+  
+  .card h3 {
+    margin: 0.5rem 0;
+    color: #f4b400;
+  }
+  
+  /* SECTION ABOUT */
+  .about {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  .about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* SECTION CTA */
+  .cta {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: #f4b400;
+    color: #000;
+  }
+  
+  .cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta .btn-primary {
+    background: #000;
+    color: #f4b400;
+  }
+  
+  .cta .btn-primary:hover {
+    background: #222;
+  }
+  
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #111;
+    font-size: 0.9rem;
+  }
+  

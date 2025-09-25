@@ -16,18 +16,18 @@
   <div class="login-box">
     <h1>S'inscrire</h1><br>
 
-    <form method="post" action="login_process.php">
+    <!-- Envoi du formulaire vers register_process.php -->
+    <form method="post" action="register_process.php">
+      <input type="text" name="login" placeholder="Login" required>
       <input type="email" name="email" placeholder="E-mail" required>
-
-      <input type="login" name="login" placeholder="Login" required>
-
-      <input type="password" name="password" placeholder="mot de passe" required>
-      
+      <input type="password" name="password" placeholder="Mot de passe" required>
       <input type="submit" value="S'inscrire">
     </form>
 
-    <p>Vous avez un compte ? <a href="connexion.php">Se connecter</a></p>
-    <p>Revenir à l'accueil ? <a href="../index.php">Cliquez ici !</a></p>
+    
+    <a href="../index.php" class="bouton-2">Se connecter</a>
+
+    <a href="../index.php" class="bouton-2">Revenir à l'accueil</a>
   </div>
 
 </body>

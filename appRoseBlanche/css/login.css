@@ -1,65 +1,124 @@
 body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      height: 100vh;
-      background: url("../image/burger1.png") no-repeat center center fixed;
-      background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-    }
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  background: url("../image/burger1.png") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
 
-    .login-box {
-      background: rgba(255, 255, 255, 0.8);
-      padding: 2%;
-      border-radius: 20px;
-      width: 17%;
-      margin-right: 3%;
-      text-align: center;
-    }
+.login-box {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2%;
+  border-radius: 20px;
+  width: 17%;
+  margin-right: 3%;
+  text-align: center;
+}
 
-    .login-box h1 {
-      margin: 0;
-      font-size: 250%;
-      font-weight: bold;
-    }
+.login-box h1 {
+  margin: 0;
+  font-size: 250%;
+  font-weight: bold;
+}
 
-    .login-box input[type="text"],
-    .login-box input[type="email"],
-    .login-box input[type="tel"],
-    .login-box input[type="password"] {
-      width: 80%;
-      padding: 5%;
-      margin: 15px 0;
-      border-radius: 10px;
-      border: none;
-      background: #a8a8a8;
-      font-size: 14px;
-    }
+.login-box input[type="text"],
+.login-box input[type="email"],
+.login-box input[type="tel"],
+.login-box input[type="password"] {
+  width: 80%;
+  padding: 5%;
+  margin: 15px 0;
+  border-radius: 10px;
+  border: none;
+  background: #a8a8a8;
+  font-size: 14px;
+}
 
-    .login-box input[type="submit"] {
-      width: 90%;
-      padding: 12px;
-      margin-top: 15px;
-      border: none;
-      border-radius: 10px;
-      background: #333;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
+.login-box input[type="submit"] {
+  width: 90%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #333;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
 
-    .login-box input[type="submit"]:hover {
-      background: #111;
-    }
+.login-box input[type="submit"]:hover {
+  background: #111;
+}
 
-    .brand {
-      position: absolute;
-      top: 40%;
-      left: 4%;
-      color: white;
-      font-family: 'Times New Roman', serif;
-      font-size: 500%;
-      font-weight: bold;
-      line-height: 120%;
-    }
+.brand {
+  position: absolute;
+  top: 40%;
+  left: 4%;
+  color: white;
+  font-family: 'Times New Roman', serif;
+  font-size: 500%;
+  font-weight: bold;
+  line-height: 120%;
+}
+
+/* ----------- Responsive ----------- */
+
+/* Tablettes (max 992px) */
+@media (max-width: 992px) {
+  .login-box {
+    width: 35%;
+    margin-right: 5%;
+  }
+
+  .login-box h1 {
+    font-size: 200%;
+  }
+
+  .brand {
+    font-size: 350%;
+    top: 30%;
+  }
+}
+
+
+
+@media (max-width: 576px) {
+  body {
+    justify-content: center; /* pour pas que le bloc se connecter reste a droite maiss qu'il soit centré */
+    align-items: flex-start;
+    padding-top: 10%;
+  }
+
+  .login-box {
+    width: 80%;
+    margin: 0;
+    padding: 5%;
+  }
+
+  .login-box h1 {
+    font-size: 180%;
+  }
+
+  .login-box input[type="text"],
+  .login-box input[type="email"],
+  .login-box input[type="tel"],
+  .login-box input[type="password"] {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .login-box input[type="submit"] {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .brand {
+    position: static; /* enlève l'absolu pour mobile */
+    text-align: center;
+    font-size: 250%;
+    margin-bottom: 20px;
+  }
+}
