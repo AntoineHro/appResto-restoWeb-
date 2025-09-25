@@ -1,5 +1,6 @@
 <?php
-// register.php
+session_start();
+include 'script/inscription_script.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -10,22 +11,22 @@
   <link rel="stylesheet" href="../css/register.css">
 </head>
 <body>
-
   <div class="brand">BURGOUZZ<br>FACTORY</div>
 
   <div class="login-box">
     <h1>S'inscrire</h1><br>
 
-    <form method="post" action="login_process.php">
+    <form method="post" action="script/inscription_script.php">
+
       <input type="email" name="email" placeholder="E-mail" required>
 
-      <input type="login" name="login" placeholder="Login" required>
+      <input type="text" name="login" placeholder="Login" required>
 
       <input type="password" name="password" placeholder="mot de passe" required>
-      
-      <input type="submit" value="S'inscrire">
-    </form>
 
+      <input type="submit" value="S'inscrire">
+
+    </form>
     <p>Vous avez un compte ? <a href="connexion.php">Se connecter</a></p>
     <p>Revenir à l'accueil ? <a href="../index.php">Cliquez ici !</a></p>
   </div>

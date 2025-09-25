@@ -1,6 +1,10 @@
 <?php
-// login.php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+session_start();
+include 'script/connexion_script.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -16,9 +20,12 @@
   <div class="login-box">
     <h1>Se connecter</h1><br>
 
-    <form method="post" action="login_process.php">
-      <input type="login" name="login" placeholder="Entrez votre login" required>
+    <form method="post" action="script/connexion_script.php">
+
+      <input type="text" name="login" placeholder="Entrez votre login" required>
+
       <input type="password" name="password" placeholder="mot de passe" required>
+
       <input type="submit" value="Connexion">
     </form>
 
