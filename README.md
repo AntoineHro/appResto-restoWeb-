@@ -1,44 +1,77 @@
-# 🍽️ AppResto - RestoWeb
+# 🍽️ Application Web - Resto
 
-**RestoWeb** est la partie **front-office** du projet **AppResto**, réalisée dans le cadre du module *Ateliers de Professionnalisation* (AP) en BTS SIO 2e année (2025-2026), spécialité SLAM.
+Une application web simple pour la gestion d’un restaurant : affichage du menu, inscription/connexion des utilisateurs, gestion du panier et des commandes.
 
-Elle permet aux clients d’un restaurant de consulter le menu, passer commande en ligne et d’être notifiés lorsque leur commande est prête.
+## 🚀 Fonctionnalités
+- Page d’accueil avec présentation du restaurant  
+- Système d’inscription et de connexion utilisateur  
+- Gestion des commandes (ajout au panier, validation)  
+- Base de données SQL pour stocker les utilisateurs et les commandes  
+- Interface en PHP/CSS avec images  
 
----
+## 📂 Structure du projet
+```
+appRoseBlanche/
+│── index.php              # Page d'accueil
+│── mpd.sql                # Modèle physique de données (base SQL)
+│
+├── css/                   # Styles CSS
+│   ├── connexion.css
+│   ├── index.css
+│   ├── inscription.css
+│   ├── menus.css
+│   ├── nav-barre.css
+│   └── panier.css
+│
+├── image/                 # Ressources graphiques
+│   ├── background.png
+│   ├── burger1.png
+│   └── panier.png
+│
+├── page/                  # Pages secondaires
+│   ├── connexion.php
+│   ├── inscription.php
+│   ├── commander.php
+│   ├── panier.php
+│   └── script/            # Scripts backend
+│       ├── connexion_dbh.php
+│       ├── connexion_script.php
+│       ├── deconnexion_script.php
+│       ├── inscription_script.php
+│       └── recuperationUtil_script.php
+```
 
-## 📱 Objectif
+## 🛠️ Installation
 
-Remplacer la commande traditionnelle (serveur, papier) par une interface web responsive accessible depuis un smartphone.
+1. **Cloner le dépôt :**
+   ```bash
+   git clone https://github.com/ton-compte/appResto-restoWeb.git
+   cd appResto-restoWeb/appRoseBlanche
+   ```
 
----
+2. **Configurer la base de données :**
+   - Créer une base de données MySQL/MariaDB.  
+   - Importer le fichier `mpd.sql` :
+     ```sql
+     SOURCE appRoseBlanche/mpd.sql;
+     ```
+   - Adapter les identifiants de connexion à la BDD dans `page/script/connexion_dbh.php`.
 
-## 🔧 Technologies utilisées
+3. **Lancer le serveur PHP :**
+   ```bash
+   php -S localhost:8000
+   ```
+   Puis ouvrir [http://localhost:8000](http://localhost:8000) dans le navigateur.
 
-- HTML / CSS
-- PHP
-- MariaDB
-- API REST (JSON)
-- VSCode
+## 🔑 Identifiants de test
+Si fournis dans `mpd.sql`, importer les données de test. Sinon, créer un compte via la page d’inscription.
 
----
+## 📌 Prérequis
+- PHP >= 7.4  
+- MySQL/MariaDB  
+- Un serveur local type [XAMPP](https://www.apachefriends.org) ou [Laragon](https://laragon.org)
 
-## 📁 Fonctionnalités
-
-| Lot | Fonctionnalités / Contenu |
-|-----|---------------------------|
-| 1   | Diagrammes : Cas d'utilisation, Activités, MCD, MLD, IHM, Sitemap |
-| 2   | MPD, lotissement projet, site statique, déploiement |
-| 3   | Pages : accueil, connexion, déconnexion, inscription, liste des produits |
-| 4   | Pages : commande, paiement, confirmation |
-| 5   | API JSON : lister commandes, accepter, refuser, marquer comme prête |
-| 6   | Documentation technique et utilisateur |
-
----
-
-## 🧪 Installation
-
-### Prérequis :
-- Serveur local (XAMPP, WAMP ou autre)
-- Base de données MariaDB
-- PHP 7.4+
-
+## ✨ Améliorations possibles
+- Ajout d’un espace administrateur pour gérer les menus et commandes.  
+- Système de paiement en ligne.  
+- Interface responsive (mobile-first).  
