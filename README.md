@@ -105,7 +105,6 @@ appRoseBlanche/
 - MySQL/MariaDB  
 - Un serveur local type [XAMPP](https://www.apachefriends.org) ou [Laragon](https://laragon.org)
 
-## ✨ Améliorations possibles
-- Ajout d’un espace administrateur pour gérer les menus et commandes.  
-- Système de paiement en ligne.  
-- Interface responsive (mobile-first).  
+## ✨ Améliorations futures
+- Ajout d’un espace administrateur pour gérer les menus et commandes (restoSwing).
+- Mise en place d'un css responsive.
