@@ -80,9 +80,9 @@ appRoseBlanche/
 <table>
   <thead>
     <tr>
-      <th>Nom utilisateur</th>
-      <th>Mot de passe</th>
-      <th>Fonction</th>
+      <th style="background-color: #d3d3d3;">Nom utilisateur</th>
+      <th style="background-color: #d3d3d3;">Mot de passe</th>
+      <th style="background-color: #d3d3d3;">Fonction</th>
     </tr>
   </thead>
   <tbody>
