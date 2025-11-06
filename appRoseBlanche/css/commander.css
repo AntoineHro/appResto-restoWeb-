@@ -1,6 +1,7 @@
 body {
   margin: 0;
   background: url("../image/background.png") no-repeat center center fixed;
+  background-size: cover;
   font-family: 'Times New Roman', Times, serif;
   color: #000;
 }
@@ -67,4 +68,5 @@ body {
 .menu-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(255, 0, 0, 0.7);
+
 }
