@@ -15,6 +15,7 @@ Une application web simple pour la gestion d’un restaurant : affichage du menu
 appRoseBlanche/
 │── index.php              # Page d'accueil
 │── mpd.sql                # Modèle physique de données (base SQL)
+│── insert.sql             # script d'insertion sql
 │
 ├── css/                   # Styles CSS
 │   ├── commander.css
