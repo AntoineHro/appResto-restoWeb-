@@ -6,6 +6,7 @@ body {
         justify-content: center;
         align-items: center;
         background: url("../image/background.png") no-repeat center center fixed;
+        background-size: cover;
         font-family: 'Times New Roman', Times, serif;
     }
 
