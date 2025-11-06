@@ -70,6 +70,10 @@ appRoseBlanche/
      ```sql
      SOURCE appRoseBlanche/mpd.sql;
      ```
+   - Importer le fichier `insert.sql` directement (c'est un script de peuplement pour les jeux de tests)  :
+     ```sql
+     SOURCE appRoseBlanche/insert.sql;
+     ```
 
 3. **Lancer le serveur PHP :**
    ```bash
