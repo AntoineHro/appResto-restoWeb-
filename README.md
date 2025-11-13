@@ -112,4 +112,4 @@ appRoseBlanche/
 
 ## ✨ Améliorations futures
 - Ajout d’un espace administrateur pour gérer les menus et commandes (restoSwing).
-- Mise en place d'un css responsive.
+- Mise en place d'un css responsive. 🐱
