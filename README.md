@@ -34,6 +34,16 @@ appRoseBlanche/
 │   ├── burger1.png
 │   └── panier.png
 │
+│
+├── api/                   # API pour resto Swing
+│   ├── commande_en_attente.php
+│   ├── commande_accepter.php
+│   ├── commande_refuser.php
+│   ├── commande_terminer.php
+│   └── json
+│       └── commande_en_attente_ex_representatif.json #juste un exemple de representation de ce que retourne la requete
+│
+│
 ├── page/                  # Pages secondaires       
 │   ├── commander.php
 │   ├── confirmation.php
