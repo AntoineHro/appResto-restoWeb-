@@ -1,0 +1,63 @@
+body {
+      margin: 0;
+      font-family: 'Times New Roman', Times, serif;
+      height: 100vh;
+      background: url("../image/burger1.png") no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .login-box {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 2%;
+      border-radius: 20px;
+      width: 17%;
+      margin-right: 3%;
+      text-align: center;
+    }
+
+    .login-box h1 {
+      margin: 0;
+      font-size: 250%;
+      font-weight: bold;
+    }
+
+    .login-box input[type="text"],
+    .login-box input[type="email"],
+    .login-box input[type="password"] {
+      width: 80%;
+      padding: 5%;
+      margin: 15px 0;
+      border-radius: 10px;
+      border: none;
+      background: #ffffff;
+      font-size: 14px;
+    }
+
+    .login-box input[type="submit"] {
+      width: 90%;
+      padding: 12px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 10px;
+      background: #333;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .login-box input[type="submit"]:hover {
+      background: #111;
+    }
+
+    .brand {
+      position: absolute;
+      top: 40%;
+      left: 4%;
+      color: white;
+      font-size: 500%;
+      font-weight: bold;
+      line-height: 120%;
+    }
