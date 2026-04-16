@@ -1,0 +1,263 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+package restoswing;
+import java.awt.event.*;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+/**
+ *
+ * @author antoine
+ */
+public class Commande_liste extends javax.swing.JFrame {
+    
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Commande_liste.class.getName());
+
+    ArrayList<Commande> commandes; // collection des commandes
+    ArrayList<Ligne> lignes; // collection des lignes
+    
+    static final String API_url = "http://localhost/projet/appRoseBlanche/api/commandes_en_attente.php";
+    
+    /**
+     * Creates new form MyJFrame
+     */
+    public Commande_liste() {
+        initComponents();
+        get_data();
+    }
+    
+    // Appelle l'api et remplit la table des commandes
+    public void get_data(){
+        commandes = new ArrayList<>(); // reinitialise la collection des commandes
+        
+        String json = ""; // le json brut      
+        int i = 0; // indice sur les commandes
+        int j = 0; // indice sur les lignes de commande d'une commande
+        
+        
+        // créer un http client
+        HttpClient client = HttpClient.newHttpClient();
+        // créer une requete http GET
+        try {
+            // construit l'url de la requete 
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(new URI(API_url))
+                    .build();
+            // envoie la requete et attends la réponse
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            // verifie que le resultat est normale
+            if(response.statusCode() == 200){
+                json = response.body();
+            } else{
+                System.err.println("Erreur : Code statut " + response.statusCode());
+            }
+        } catch (Exception ex){
+            System.err.println("Erreur : " + ex.getMessage());
+            // ex.printStackTrace
+        }
+        // System.out.println(json);
+        
+        
+        // parse le fichier et remplit la colelction d'objets métier       
+        try{
+            JSONArray commandes_json = new JSONArray(json);
+            for (i = 0 ; i < commandes_json.length(); i++){
+                // récupère la commande 
+                JSONObject commande_json = commandes_json.getJSONObject(i);
+                // récupère les lignes de commande de la commande
+                lignes = new ArrayList<>(); // reinitialise la collection
+                JSONArray lignes_json = commande_json.getJSONArray("Produits");
+                // pour une commande on récupère le tableau "Produits"
+                for (j = 0; j < lignes_json.length() ; j++){
+                    JSONObject ligne_json = lignes_json.getJSONObject(j);
+                    Ligne ligne = new Ligne(ligne_json.getInt("ID-produit"), ligne_json.getString("Plat"), ligne_json.getInt("Quantite"));
+                    lignes.add(ligne);
+                }
+                
+                // crée un objet métier à partir du json
+                Commande commande = new Commande(
+                                                 commande_json.getInt("ID_cmd"), 
+                                                 commande_json.getInt("ID_user"), 
+                                                 commande_json.getString("Login"),
+                                                 commande_json.getString("Date"),
+                                                 commande_json.getString("Etat"),
+                                                 commande_json.getInt("NB_plats"),
+                                                 commande_json.getString("Montant"),
+                                                 lignes
+                                                );
+                commandes.add(commande);
+            } 
+        } catch (Exception ex) {
+            System.err.println("Erreur : " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    
+        MyTableModel model = new MyTableModel(commandes);
+        jTable1.setModel(model);
+        
+        
+        jTable1.getColumnModel().getColumn(0).setPreferredWidth(80);
+        jTable1.getColumnModel().getColumn(1).setPreferredWidth(80);
+        jTable1.getColumnModel().getColumn(2).setPreferredWidth(150);
+        jTable1.getColumnModel().getColumn(3).setPreferredWidth(150);
+        jTable1.getColumnModel().getColumn(4).setPreferredWidth(80);
+        jTable1.getColumnModel().getColumn(5).setPreferredWidth(60);
+    }
+    
+    
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("RestoSwing");
+
+        jLabel2.setText("Commandes");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jButton1.setText("Détails");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+
+        jButton2.setText("Quitter");
+        jButton2.addActionListener(this::jButton2ActionPerformed);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(88, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(21, 21, 21))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(354, 354, 354)
+                        .addComponent(jButton2)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // récupère l'index de la ligne sélectionne dans le JTable
+        int row = jTable1.getSelectedRow();
+        // System.out.println("row ="+row);
+        
+        // récupère la commande séléctionnée et ouvre la fenetre JDialog des lignes de commande de la commande
+        if (row >= 0 && row < jTable1.getRowCount()){
+            // récupère la commande selectionnée 
+            Commande commande = commandes.get(row);
+            // System.out.println(commande);
+            
+            // Créer la fenetre JDialog des lignes en passant la commande selectionnée
+            Commande_details ligne_liste = new Commande_details(this, true, commande);
+            
+            // ajoute un listener quand la fenetre "ligne_liste" est fermée
+            ligne_liste.addWindowListener(new WindowAdapter(){
+                public void windowClosed(WindowEvent e){
+                    System.out.println("jdioalog window closed"); // test
+                    get_data(); // Rafraichit la jtable
+                } // windowClosed()
+                
+            });
+            
+            // Affiche la fenetre des lignes
+            ligne_liste.setVisible(true);
+        } // if
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        // Ferme l'application 
+        System.exit(0);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+            logger.log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> new Commande_liste().setVisible(true));
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    // End of variables declaration//GEN-END:variables
+}
