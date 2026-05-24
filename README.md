@@ -41,7 +41,7 @@ appRoseBlanche/
 │   ├── commande_refuser.php
 │   ├── commande_terminer.php
 │   └── json
-│       └── commande_en_attente_ex_representatif.json #juste un exemple de representation de ce que retourne la requete
+│       └── commande_en_attente_ex_representatif.json # Exemple de retour JSON
 │
 │
 ├── page/                  # Pages secondaires       
