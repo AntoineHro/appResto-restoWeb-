@@ -1,6 +1,6 @@
 # appRestoweb — Application de commande en ligne
 
-Application web PHP de commande de repas pour le restaurant **Wallouz**, avec système d'authentification, panier, gestion des commandes et **logging des événements** (connexions / inscriptions) sur disque.
+Application web PHP de commande de repas pour le restaurant **restoWeb**, avec système d'authentification, panier, gestion des commandes et **logging des événements** (connexions / inscriptions) sur disque.
 
 ---
 
