@@ -188,7 +188,3 @@ Exemple de réponse (`commandes_en_attente.php`) :
 - **Serveur :** Apache (XAMPP/WAMP)
 
 ---
-
-## 👤 Auteur
-
-Projet réalisé dans le cadre d'un cours — Restaurant **Wallouz** / **RoseBlanche**.
