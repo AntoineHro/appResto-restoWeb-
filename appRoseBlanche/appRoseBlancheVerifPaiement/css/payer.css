@@ -1,0 +1,141 @@
+/* ── page base ── */
+.body {
+    background: url("../image/background.png") no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
+    box-sizing: border-box;
+}
+
+/* ── card container ── */
+.paiement-card {
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    padding: 40px 48px;
+    width: 100%;
+    max-width: 480px;
+    box-sizing: border-box;
+}
+
+.paiement-card h2 {
+    margin: 0 0 24px 0;
+    font-size: 1.7rem;
+    color: #2c2c2c;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* ── order summary block ── */
+.paiement-resume {
+    background: #f5f7fa;
+    border: 1px solid #e0e4ea;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+}
+
+.paiement-resume p {
+    margin: 6px 0;
+    color: #444;
+    font-size: 0.95rem;
+}
+
+.paiement-resume p strong {
+    color: #1a1a1a;
+}
+
+.paiement-total {
+    font-size: 1.15rem !important;
+    font-weight: 700;
+    color: #c0392b !important;
+    margin-top: 10px !important;
+}
+
+/* ── form fields ── */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+}
+
+.form-group input {
+    padding: 11px 14px;
+    border: 1.5px solid #ccd0d9;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #2c2c2c;
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #c0392b;
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
+}
+
+/* row for expiry + cvv side by side */
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* ── pay button ── */
+.btn-payer {
+    width: 100%;
+    padding: 14px;
+    background: #c0392b;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-payer:hover {
+    background: #a93226;
+}
+
+.btn-payer:active {
+    transform: scale(0.98);
+}
+
+/* ── back link ── */
+.paiement-retour {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.paiement-retour a {
+    color: #c0392b;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.paiement-retour a:hover {
+    text-decoration: underline;
+}

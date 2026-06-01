@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  background: url("../image/background.png") no-repeat center center fixed;
+  font-family: 'Times New Roman', Times, serif;
+  color: #000;
+}
+
+.price {
+  background: red;
+  color: white;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  text-align: center;
+}
+
+/* ==========================
+    Menu Cards
+   ========================== */
+.menu-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    padding: 0px;
+    max-width: 1500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+    margin-bottom: 0%;
+}
+
+.menu-card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-card h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: red;
+}
+
+.menu-card p {
+    font-size: 0.95em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.menu-card .menu-link {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #ff8484d2, #ff0000d2);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 0, 0, 0.7);
+}

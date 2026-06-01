@@ -1,0 +1,43 @@
+[
+    {
+        "ID_cmd": 64,
+        "ID_user": 1,
+        "Date": "2026-02-23 11:56:42",
+        "Etat": "en attente",
+        "NB_plats": 1,
+        "Montant": "30.78",
+        "Produits": [
+            {
+                "ID-produit": 3,
+                "Plat": "le triple cheese",
+                "Quantite": 2
+            }
+        ]
+    },
+    {
+        "ID_cmd": 65,
+        "ID_user": 1,
+        "Date": "2026-02-23 11:59:39",
+        "Etat": "en attente",
+        "NB_plats": 3,
+        "Montant": "52.76",
+        "Produits": [
+            {
+                "ID-produit": 1,
+                "Plat": "le simple cheese",
+                "Quantite": 1
+            },
+            {
+                "ID-produit": 2,
+                "Plat": "le double cheese",
+                "Quantite": 2
+            },
+            {
+                "ID-produit": 3,
+                "Plat": "le triple cheese",
+                "Quantite": 1
+            }
+        ]
+    }
+]
+
