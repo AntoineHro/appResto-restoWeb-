@@ -1,0 +1,1 @@
+test test@lim.fr | ... | 2026-05-28 16:37:09.361575 | ::1 | tentative-inscription | KO | inscription échouée car pseudo ou e-mail déjà utilisé. | 

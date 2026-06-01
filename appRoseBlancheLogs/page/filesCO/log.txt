@@ -1,0 +1,5 @@
+Test;...;2026-05-28 16:01:12.223044;::1;connexion;OK;connexion réussie;
+test  | jsksj | 2026-05-28 16:03:08.129501 | ::1 | connexion | KO | login et/ou password invalide | 
+Test | ... | 2026-05-28 16:03:11.591023 | ::1 | connexion | OK | connexion réussie | 
+test | testss | 2026-05-28 16:06:32.257603 | 127.0.0.1 | connexion | KO | login et/ou password invalide | 
+Test | ... | 2026-05-28 16:06:36.951679 | 127.0.0.1 | connexion | OK | connexion réussie | 
